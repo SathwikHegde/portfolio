@@ -1,14 +1,25 @@
-import { motion } from 'framer-motion';
+import './Home.scss'; 
 
 const Home = () => {
   return (
-    <div className="container home-page">
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-        <h1>Hi, I'm Sathwik Hegde</h1>
-        <h2>Data Engineer | Data Enthusiast | Lifelong Learner</h2>
-        <p>Welcome to my personal portfolio showcasing my journey in Data Engineering, Data Science, and beyond.</p>
-        <a href="/Resume.pdf" download className="flat-button">Download Resume</a>
-      </motion.div>
+    <div className="home-container">
+      <div className="photo-section">
+        <img src="/your-photo.jpg" alt="Sathwik Hegde" className="profile-photo" />
+        
+      </div>
+      <div className="text-section">
+        <h1>Hi, I'm <span className="highlight">Sathwik Hegde</span></h1>
+        <h2>Data Engineer | Big Data Specialist | Cloud Enthusiast</h2>
+        <p>
+          I design and build scalable, high-performance data pipelines that handle 
+          massive volumes of data daily. My work enables smarter business decisions 
+          through reliable data engineering practices, cloud technologies, and machine learning systems.
+        </p>
+        <p>
+          Passionate about crafting solutions in the realms of GCP, AWS, Apache Spark, SQL, Python, and more.
+          Let's harness data to transform tomorrow!
+        </p>
+      </div>
     </div>
   );
 };
