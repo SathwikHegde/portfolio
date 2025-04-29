@@ -9,24 +9,29 @@
     text-align: center;
   
     h1 {
-      font-size: 3rem;
+      font-size: 5rem;
       font-weight: 800;
       margin-bottom: 30px;
-      color: #64ffda; /* Light green tech color */
+      color: #64ffda;
     }
   
     .about-text {
       max-width: 900px;
-      font-size: 1.3rem; /* Bigger font */
-      line-height: 1.9; /* More line spacing for readability */
+      font-size: 2rem;
+      line-height: 1.9;
       color: #a8b2d1;
       margin-bottom: 20px;
       text-align: justify;
+  
+      .highlight {
+        color: #64ffda;
+        font-weight: 700;
+      }
     }
   
     .quote {
       margin-top: 30px;
-      font-size: 1.1rem;
+      font-size: 2rem;
       font-style: italic;
       color: #8892b0;
     }
@@ -38,12 +43,16 @@
       padding: 40px 20px;
   
       h1 {
-        font-size: 2.2rem;
+        font-size: 2.8rem;
       }
   
       .about-text {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         line-height: 1.7;
+      }
+  
+      .quote {
+        font-size: 1.1rem;
       }
     }
   }
