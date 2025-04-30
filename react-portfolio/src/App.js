@@ -4,6 +4,8 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Sidebar from './components/Sidebar';
+import Skills from './pages/Skills';
+
 import './App.css';
 
 function App() {
@@ -16,7 +18,9 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/skills" element={<Skills />} />
             <Route path="/contact" element={<Contact />} />
+            
           </Routes> {/* END Routes wrapper */}
         </div>
       </div>
