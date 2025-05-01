@@ -18,7 +18,7 @@ const About = () => {
       </p>
 
       <p className="about-text">
-        My experience spans across <span className="highlight">GCP</span>, <span className="highlight">AWS</span>, 
+        My experience spans across <span className="highlight">GCP</span>, <span className="highlight">AWS</span>,   
         <span className="highlight">Apache Spark</span>, <span className="highlight">SQL</span>, and <span className="highlight">Python</span>.
         I help organizations turn raw data into meaningful, actionable outcomes.
       </p>

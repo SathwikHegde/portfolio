@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import './Home.scss';
 import profileImage from '../assets/images/your-photo.jpg';
+import headerIcon from '../assets/images/Logo.png';
 
 const Home = () => {
   return (
@@ -11,6 +12,10 @@ const Home = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
+      <div className="home-header">
+        <img src={headerIcon} alt="Header Icon" className="header-icon" />
+      </div>
+
       <motion.div 
         className="photo-section"
         initial={{ scale: 0.8, opacity: 0 }}
@@ -45,6 +50,22 @@ const Home = () => {
           enjoying the slopes while skiing⛷️, or soaking up the sun☀️ on a beach🏝️. These activities keep me energized and balanced, helping
           me bring focus and clarity to my work.
         </p>
+        <div className="home-buttons">
+          <a
+            href="/resume.pdf"
+            className="btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Resume
+          </a>
+          <a
+            href="mailto:sathwikhegde14@gmail.com"
+            className="btn hire-btn"
+          >
+            Hire Me
+          </a>
+        </div>
       </motion.div>
     </motion.div>
   );

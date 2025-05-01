@@ -20,7 +20,7 @@ const Skills = () => {
       if (window.TagCanvas) {
         try {
           window.TagCanvas.Start('myCanvas', 'tag-list', {
-            textColour: '#64ffda',
+            textColour: '#30B0CA',
             textHeight: 32,
             outlineMethod: 'colour',
             outlineColour: '#ffd700',
