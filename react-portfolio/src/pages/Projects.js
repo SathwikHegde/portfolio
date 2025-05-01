@@ -1,46 +1,50 @@
 import React from 'react';
 import './Projects.scss';
 
-const projectList = [
-  {
-    title: 'American Express Default Prediction',
-    description: 'Predicting the probability that a customer will default on their credit card balance using anonymized financial data.',
-    github: 'https://github.com/SathwikHegde/Amex-Default-Prediction'
-  },
-  {
-    title: 'Employee Future Prediction (AutoML - H2O.ai)',
-    description: 'Using H2O AutoML to predict whether employees will leave or stay based on historical HR data.',
-    github: 'https://github.com/SathwikHegde/Employee-Future-Prediction'
-  },
-  {
-    title: 'Water Quality Prediction',
-    description: 'Predicting potability of water based on physicochemical properties using machine learning techniques.',
-    github: 'https://github.com/SathwikHegde/Water-Quality-Prediction'
-  },
-  {
-    title: 'CSV Automation + Oracle Loader',
-    description: 'Automates CSV ingestion, file renaming, row counting, and loading into Oracle DB via SQL*Loader.',
-    github: 'https://github.com/SathwikHegde/csv_data_pipeline'
-  },
-  {
-    title: 'Dental Clinic DB Design',
-    description: 'Designed relational schema, ER diagram, and seeding logic for managing appointments, staff, and patient records.',
-    github: 'https://github.com/SathwikHegde/Dental-Clinic-DB-Design'
-  }
-];
+const ProjectCard = ({ title, description, github, demo, tech }) => (
+  <div className="project-card">
+    <h3>{title}</h3>
+    <p>{description}</p>
+    <p className="tech-stack">Tech Stack: {tech}</p>
+    <div className="project-links">
+      <a href={github} target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href={demo} target="_blank" rel="noopener noreferrer">Live Demo</a>
+    </div>
+  </div>
+);
 
 const Projects = () => {
   return (
-    <div className="projects-container">
-      <h1>My Projects</h1>
-      <div className="project-grid">
-        {projectList.map((project, idx) => (
-          <div className="project-card" key={idx}>
-            <h2>{project.title}</h2>
-            <p>{project.description}</p>
-            <a href={project.github} target="_blank" rel="noopener noreferrer">View on GitHub</a>
-          </div>
-        ))}
+    <div className="projects-wrapper">
+      <h1>Featured Projects</h1>
+      <div className="projects-container">
+        <div className="project-column">
+          <h2>Data Science Projects</h2>
+          <ProjectCard title="American Express Default Prediction" description="Optimized classification models using PCA, XGBoost, SVM, and GridSearch." tech="Python, Scikit-learn, Pandas, Matplotlib" github="#" demo="#" />
+          <ProjectCard title="Patient Treatment Prediction" description="Built ML models to predict treatment response from patient health records." tech="Python, Logistic Regression, Random Forest, Flask" github="#" demo="#" />
+          <ProjectCard title="Employee Future Prediction" description="Predicted employee churn using AutoML (H2O.ai) and advanced feature engineering." tech="H2O.ai, Pandas, PCA, XGBoost" github="#" demo="#" />
+          <ProjectCard title="Neural Network Typeface Classification" description="Trained CNNs on custom font datasets using Keras and evaluated model accuracy." tech="Keras, TensorFlow, Python" github="#" demo="#" />
+          <ProjectCard title="Water Quality Prediction" description="Predicted water potability using SVM, Random Forests, and Gradient Boosting." tech="Python, Scikit-learn, Seaborn" github="#" demo="#" />
+        </div>
+
+        <div className="project-column">
+          <h2>Data Engineering Projects</h2>
+          <ProjectCard title="AWS Web Application" description="Built a scalable Spring Boot app deployed on AWS EC2 via CI/CD and CloudFormation." tech="Java, Spring Boot, MySQL, AWS" github="#" demo="#" />
+          <ProjectCard title="Dental Care Application" description="Developed PHP/MySQL web system for patients and dentists with secure login." tech="PHP, MySQL, Apache" github="#" demo="#" />
+          <ProjectCard title="CSV Oracle Loader Automation" description="Automated data transfer with row validation, renaming, and Oracle load." tech="Python, Oracle SQL, SQL*Loader" github="#" demo="#" />
+        </div>
+
+        <div className="project-column">
+          <h2>DevOps Projects</h2>
+          <ProjectCard title="Expensify Expense Tracker" description="CI/CD with GitHub Actions, JWT auth, MongoDB backend and MUI UI." tech="React, Node.js, MongoDB, GitHub Actions" github="#" demo="#" />
+          <ProjectCard title="AWS Infrastructure Automation" description="Used Bash + CloudFormation to launch scalable AWS resources with cost optimization." tech="AWS, CloudFormation, Bash" github="#" demo="#" />
+        </div>
+
+        <div className="project-column">
+          <h2>Software Engineering Projects</h2>
+          <ProjectCard title="Portfolio Website" description="React-based personal portfolio with animated sections and scroll navigation." tech="React, SCSS, Framer Motion" github="#" demo="#" />
+          <ProjectCard title="Orphanage Supplies Ecosystem" description="Java Swing system to manage donor requests and track inventory visually." tech="Java, Swing, JFreeChart, DB04" github="#" demo="#" />
+        </div>
       </div>
     </div>
   );
