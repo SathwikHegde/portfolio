@@ -1,11 +1,12 @@
 .skills-wrapper {
-  display: flex;  
+  display: flex;
   flex-direction: column;
   align-items: center;
   padding: 10px 10px;
   background-color: #fffdf5;
   min-height: 100vh;
   color: #000;
+  animation: fadeIn 1s ease-in;
 
   h1 {
     font-size: 5rem;
@@ -38,7 +39,6 @@
     color: #666;
     margin-bottom: 20px;
     text-align: center;
-    
   }
 
   .timeline {
@@ -52,7 +52,6 @@
   .timeline-item {
     position: relative;
     margin-bottom: 15px;
-    
 
     .timeline-circle {
       position: absolute;
@@ -73,6 +72,7 @@
         position: absolute;
         width: 320px;
         font-size: 1.9rem;
+        font-weight: 900;
         color: #444;
         margin-right: 10px;
         text-align: left;
@@ -105,6 +105,7 @@
     }
   }
 }
+
 .tech-tags {
   margin-top: 10px;
   display: flex;
@@ -139,19 +140,59 @@
 }
 
 /* Responsive fallback */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .skills-content {
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
 
   .experience-section {
-    margin-left: 0;
+    margin-right: 0;
     width: 100%;
   }
 
   .canvas-container {
+    margin-left: 0;
     width: 100%;
     height: 500px;
+  }
+
+  .timeline-item .timeline-circle .date {
+    font-size: 1.2rem;
+    width: 250px;
+  }
+
+  .tech-pill {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-wrapper h1 {
+    font-size: 3rem;
+  }
+
+  .timeline-item .timeline-content h3,
+  .timeline-item .timeline-content .company,
+  .timeline-item .timeline-content .description {
+    font-size: 1.3rem;
+  }
+
+  .tech-pill {
+    font-size: 1rem;
+    padding: 4px 10px;
+  }
+}
+
+/* Optional Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
