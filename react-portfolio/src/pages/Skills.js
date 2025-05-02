@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import './Skills.scss';
+import { FaLaptopCode } from 'react-icons/fa';
 
 const Skills = () => {
   const canvasRef = useRef(null);
@@ -21,14 +22,13 @@ const Skills = () => {
         try {
           window.TagCanvas.Start('myCanvas', 'tag-list', {
             textColour: '#30B0CA',
-            textHeight: 32,
+            textHeight: 42,
             outlineMethod: 'colour',
             outlineColour: '#ffd700',
             reverse: true,
             depth: 0.8,
             maxSpeed: 0.05,
-            weight: true,
-            weightFrom: 'data-weight',
+            weight: false,
             initial: [0.1, -0.1],
             dragControl: true,
             freezeActive: true,
@@ -44,32 +44,90 @@ const Skills = () => {
     });
   }, []);
 
+  const experiences = [
+    {
+      role: "Business Intelligence Engineer",
+      company: "CloudData Technology LLC · Contract | Location: Denver, Colorado, USA",
+      date: "Sep 24 – Mar 25",
+      description:
+        "In the healthcare domain, I designed and implemented scalable ETL pipelines using AWS services to streamline claims data processing and analysis. I built optimized data models in Amazon Redshift and orchestrated workflows with AWS Step Functions, improving performance and reliability. I ensured HIPAA compliance and achieved 98% accuracy through rigorous data validation.",
+      technologies: [
+        "AWS Kinesis", "AWS Glue", "AWS Lambda", "Redshift", "Step Functions", "HIPAA Compliance"
+      ],
+    },
+    {
+      role: "Software Architect I",
+      company: "Spectrum · Contract | Location: Denver, Colorado, USA",
+      date: "Sep 23 – May 24",
+      description:
+        "In the telecom domain at Charter Communications, I architected end-to-end data solutions and ETL pipelines using AWS and ETL tools to optimize HMNO operations, reduce fallouts, and streamline reporting. I developed real-time dashboards with Tableau and MicroStrategy, enabling senior management to gain actionable insights into CBRS, SIM usage, and RAN KPIs. Additionally, I applied machine learning for forecasting and used Datadog for proactive system monitoring and performance optimization.",
+      technologies: [
+        "AWS", "Alteryx", "Tableau", "MicroStrategy", "Datadog", "ML Forecasting"
+      ],
+    },
+    {
+      role: "Consultant – DataOps Engineer",
+      company: "Capgemini India Pvt Ltd · Full-Time | Location, Mumbai, Maharashtra, India",
+      date: "Feb 17 – Jul 21",
+      description:
+        "At Capgemini, I led end-to-end data engineering and BI initiatives across HR analytics, wholesale, and manufacturing domains, delivering scalable ETL pipelines and data models using scripting and cloud technologies. I developed dashboards and predictive models, enhancing decision-making and operational efficiency. My work spanned data warehouse design, machine learning, RPA automation, and regulatory compliance, supporting global clients across diverse sectors.",
+      technologies: [
+        "Azure", "AWS", "Python", "SQL", "Power BI", "SAP BO", "RPA", "Tableau"
+      ],
+    },
+  ];
+  
   return (
     <div className="skills-wrapper">
-      <div className="skills-info">
-        <h1>My Skills</h1>
-        <p>
-          With a strong background in data engineering, I have designed scalable pipelines,
-          optimized cloud-based architectures, and contributed to intelligent decision-making
-          systems using tools like Airflow, BigQuery, AWS, GCP, Docker, and more. I focus on
-          turning complex data into streamlined, actionable insights that fuel business growth.
-        </p>
-      </div>
-      <div className="canvas-container">
-        <canvas width="900" height="900" id="myCanvas" ref={canvasRef}>
-          <p>Anything in here will be replaced on browsers that support the canvas element</p>
-        </canvas>
-        <div id="tag-list" ref={listRef} style={{ display: 'none' }}>
-          <ul>
-            {[
-              'Python', 'SQL', 'Airflow', 'Spark', 'AWS',
-              'Docker', 'BigQuery', 'Terraform', 'Kafka', 'MongoDB',
-              'PostgreSQL', 'NumPy', 'Pandas', 'Matplotlib', 'Seaborn',
-              'Git', 'Linux', 'JavaScript', 'HTML5', 'CSS3'
-            ].map((skill, index) => (
-              <li key={index}><a href="#" data-weight="{Math.random() * 5 + 1}">{skill}</a></li>
+      <h1>My Skills & Experience</h1>
+
+      <div className="skills-content">
+
+        <div className="canvas-container">
+          <canvas width="800" height="700" id="myCanvas" ref={canvasRef}>
+            <p>Your browser does not support the canvas element.</p>
+          </canvas>
+
+          <div id="tag-list" ref={listRef} style={{ display: 'none' }}>
+            <ul>
+              {[
+                'Python', 'SQL', 'Airflow', 'Spark', 'AWS',
+                'Docker', 'BigQuery', 'Terraform', 'Kafka', 'MongoDB',
+                'PostgreSQL', 'NumPy', 'Pandas', 'Matplotlib', 'Seaborn',
+                'Git', 'Linux', 'JavaScript', 'HTML5', 'CSS3'
+              ].map((skill, index) => (
+                <li key={index}>
+                  <a href="/" onClick={(e) => e.preventDefault()} data-weight="1">
+                    {skill}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        
+        <div className="experience-section">
+          <div className="timeline">
+            {experiences.map((exp, index) => (
+              <div className="timeline-item" key={index}>
+                <div className="timeline-content">
+                  <h3>{exp.role}</h3>
+                  <p className="company">{exp.company}</p>
+                  <p className="description">{exp.description}</p>
+                  <div className="tech-tags">
+                  {exp.technologies.map((tech, i) => (
+                    <span className="tech-pill" key={i}>{tech}</span>
+                  ))}
+                </div>
+                </div>
+                <div className="timeline-circle">
+                  <FaLaptopCode />
+                  <span className="date">{exp.date}</span>
+                </div>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </div>
     </div>
