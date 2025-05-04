@@ -2,26 +2,52 @@ $primary-color: #ffd700;
 
 @import 'animate.css';
 
+// Font Faces
 @font-face {
-    font-family: 'Helvetica Neue';
-    src: url('./assets/fonts/helvetica-neu.ttf') format('ttf');
-
+  font-family: 'Helvetica Neue';
+  src: url('./assets/fonts/helvetica-neu.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'La Belle Aurore';
-    src: url('./assets/fonts/LaBelleAurore.woff2') format('woff2');
-    
+  font-family: 'La Belle Aurore';
+  src: url('./assets/fonts/LaBelleAurore.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Coolvetica';
-    src: url('./assets/fonts/CoolveticaRg-Regular.woff2') format('woff2');
-    
+  font-family: 'Coolvetica';
+  src: url('./assets/fonts/CoolveticaRg-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
 
-
+// Form Elements Responsiveness
 input,
 textarea {
-    font-family: 'Helvetica Neue';
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.6rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+
+  &:focus {
+    border-color: $primary-color;
+    outline: none;
+    box-shadow: 0 0 5px rgba($primary-color, 0.3);
+  }
+}
+
+// Responsive Adjustment (optional)
+@media (max-width: 768px) {
+  input,
+  textarea {
+    font-size: 1.4rem;
+    padding: 0.8rem;
+  }
 }

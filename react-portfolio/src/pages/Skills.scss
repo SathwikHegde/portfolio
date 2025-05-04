@@ -9,7 +9,7 @@
   animation: fadeIn 1s ease-in;
 
   h1 {
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 800;
     margin-bottom: 30px;
     color: #000;
@@ -23,19 +23,19 @@
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
-  width: 130%;
-  height: 100%;
+  width: 100%;
+  gap: 40px;
+  margin-top: 20px;
 }
 
 /* Experience Section */
 .experience-section {
-  flex: 1;
-  padding: 0 5px;
-  height: 20px;
-  margin-right: 450px;
+  flex: 1 1 400px;
+  padding: 0 10px;
+  max-width: 10 00px;
 
   .experience-subtitle {
-    font-size: 3.2rem;
+    font-size: 3rem;
     color: #666;
     margin-bottom: 20px;
     text-align: center;
@@ -44,14 +44,13 @@
   .timeline {
     position: relative;
     border-left: 6px solid #30B0CA;
-    padding-left: 43px;
-    left: 90px;
+    padding-left: 40px;
     margin-bottom: 20px;
   }
 
   .timeline-item {
     position: relative;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 
     .timeline-circle {
       position: absolute;
@@ -65,42 +64,42 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2.1rem;
+      font-size: 2rem;
       color: #30B0CA;
 
       .date {
         position: absolute;
-        width: 320px;
-        font-size: 1.9rem;
-        font-weight: 900;
+        top: 50px;
+        width: 350%;
+        font-size: 1.6rem;
+        font-weight: 700;
         color: #444;
-        margin-right: 10px;
-        text-align: left;
+        text-align: center;
       }
     }
 
     .timeline-content {
       background: #ffffff;
-      padding: 1px 10px;
+      padding: 10px 15px;
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
       text-align: left;
 
       h3 {
-        font-size: 2.2rem;
-        margin-bottom: 3px;
+        font-size: 2rem;
+        margin-bottom: 6px;
       }
 
       .company {
-        font-size: 2rem;
+        font-size: 1.7rem;
         color: #555;
-        margin-bottom: 3px;
+        margin-bottom: 5px;
       }
 
       .description {
-        font-size: 1.95rem;
+        font-size: 1.5rem;
         color: #333;
-        line-height: 1;
+        line-height: 1.4;
       }
     }
   }
@@ -118,18 +117,18 @@
   color: #007c91;
   padding: 6px 12px;
   border-radius: 20px;
-  font-size: 1.85rem;
+  font-size: 1.6rem;
   font-weight: 500;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 /* Canvas Tag Cloud */
 .canvas-container {
-  flex: 1;
-  width: 800px;
+  flex: 1 1 500px;
+  width: 100%;
+  max-width: 1000px;
   height: 600px;
   position: relative;
-  margin-left: 300px;
 
   canvas {
     background-color: transparent;
@@ -144,27 +143,15 @@
   .skills-content {
     flex-direction: column;
     align-items: center;
-    width: 100%;
-  }
-
-  .experience-section {
-    margin-right: 0;
-    width: 100%;
-  }
-
-  .canvas-container {
-    margin-left: 0;
-    width: 100%;
-    height: 500px;
+    gap: 40px;
   }
 
   .timeline-item .timeline-circle .date {
-    font-size: 1.2rem;
-    width: 250px;
+    font-size: 1.4rem;
   }
 
   .tech-pill {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -176,12 +163,16 @@
   .timeline-item .timeline-content h3,
   .timeline-item .timeline-content .company,
   .timeline-item .timeline-content .description {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 
   .tech-pill {
     font-size: 1rem;
     padding: 4px 10px;
+  }
+
+  .canvas-container {
+    height: 400px;
   }
 }
 

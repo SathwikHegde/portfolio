@@ -1,19 +1,19 @@
 html {
-  font-size: 62.5%;
+  font-size: 62.5%; /* 1rem = 10px for easy scaling */
+  scroll-behavior: smooth;
 }
-
 
 body {
   margin: 0;
-  font-family: 300 11px/1.4 'Helvetica Neue', 'sans-serif';    
+  padding: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 300;
+  font-size: 1.1rem; /* equivalent to 11px */
+  line-height: 1.4;
   color: #444;
-  background: #fffdf5;
-  overflow: hidden;
-  display: block;
+  background-color: #fffdf5;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-html {
-  scroll-behavior: smooth;
+  display: block;
 }
