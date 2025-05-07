@@ -31,7 +31,7 @@ const About = () => {
         <span className="highlight"> ETL processes</span>, modernized 
         <span className="highlight"> data warehouses</span>, and enabled 
         <span className="highlight"> real-time analytics</span> to support strategic business decisions. 
-        My work bridges engineering and analytics — from backend data architecture to impactful dashboards and predictive modeling.
+        My work bridges engineering and analytics from backend data architecture to impactful dashboards and predictive modeling.
       </p>
 
       <p className="about-text">

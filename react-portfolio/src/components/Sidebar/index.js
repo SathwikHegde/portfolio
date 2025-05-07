@@ -1,7 +1,7 @@
 import { Link, NavLink } from 'react-router-dom'
 import './index.scss'
 import LogoSH from '../../assets/images/Logo-SH.png'
-import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin, faGithub, faHackerrank, faKaggle } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faEnvelope, faHome, faUser, faTools, faProjectDiagram} from '@fortawesome/free-solid-svg-icons'
 
@@ -41,9 +41,17 @@ const Sidebar = () => (
                 <FontAwesomeIcon icon={faGithub} color="#4d4d4e"></FontAwesomeIcon>
             </a>
         </li>
-
+        <li>
+            <a target="_blank" rel='noreferrer' href='https://www.hackerrank.com/profile/satwikhegde14'>
+                <FontAwesomeIcon icon={faHackerrank} color="#4d4d4e"></FontAwesomeIcon>
+            </a>
+        </li>
+        <li>
+            <a target="_blank" rel='noreferrer' href='https://www.kaggle.com/sathwikhegde15'>
+                <FontAwesomeIcon icon={faKaggle} color="#4d4d4e"></FontAwesomeIcon>
+            </a>
+        </li>
     </ul>
-
     </div>
     )
 
