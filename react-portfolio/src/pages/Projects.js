@@ -43,9 +43,9 @@ const Projects = () => {
 
         <div className="project-column">
           <h2>Software Engineering</h2>
-          <ProjectCard title="Expensify Expense Tracker" description="CI/CD with GitHub Actions, JWT auth, MongoDB backend and MUI UI." tech="React, Node.js, MongoDB, GitHub Actions" github="#" demo="#" />
+          <ProjectCard title="Expensify Expense Tracker" description="CI/CD with GitHub Actions, JWT auth, MongoDB backend and MUI UI." tech="React, Node.js, MongoDB, GitHub Actions" github="" demo="#" />
           <ProjectCard title="Orphanage Supplies Ecosystem" description="Java Swing system to manage donor requests and track inventory visually." tech="Java, Swing, JFreeChart, DB04" github="#" demo="#" />
-          <ProjectCard title="Portfolio Website" description="React-based personal portfolio with animated sections and scroll navigation." tech="React, SCSS, Framer Motion" github="#" demo="#" />
+          <ProjectCard title="Portfolio Website" description="React-based personal portfolio with animated sections and scroll navigation." tech="React, SCSS, Framer Motion" github="https://github.com/SathwikHegde/portfolio" demo="#" />
         </div>
       </div>
     </div>
