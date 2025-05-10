@@ -1,58 +1,56 @@
-import { Link, NavLink } from 'react-router-dom'
 import './index.scss'
 import LogoSH from '../../assets/images/Logo-SH.png'
-import { faLinkedin, faGithub, faHackerrank, faKaggle } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faEnvelope, faHome, faUser, faTools, faProjectDiagram} from '@fortawesome/free-solid-svg-icons'
-
+import { faLinkedin, faGithub, faHackerrank, faKaggle } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope, faHome, faUser, faTools, faProjectDiagram } from '@fortawesome/free-solid-svg-icons'
 
 const Sidebar = () => (
-    <div className='nav-bar'>
-        <Link className='logo' to='/'>
-            <img src={LogoSH} alt="logo"/>
-        </Link>
-    
+  <div className='nav-bar'>
+    <a className='logo' href="#home">
+      <img src={LogoSH} alt="logo" />
+    </a>
+
     <nav>
-        <NavLink exact="true" to="/" activeclassname="active" data-hover="HOME">
-            <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
-        </NavLink>
-        <NavLink exact="true" to="/about" activeclassname="active" className="about-link" data-hover="ABOUT">
-            <FontAwesomeIcon icon={faUser} color="#4d4d4e" />
-        </NavLink>
-        <NavLink exact="true" to="/skills" activeclassname="active" className="skills-link" data-hover="SKILLS">
+      <a href="#home" data-hover="Home">
+        <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
+      </a>
+      <a href="#about" data-hover="About">
+        <FontAwesomeIcon icon={faUser} color="#4d4d4e" />
+      </a>
+      <a href="#skills" data-hover="Skills">
         <FontAwesomeIcon icon={faTools} color="#4d4d4e" />
-        </NavLink>
-        <NavLink exact="true" to="/projects" activeclassname="active" className="projects-link" data-hover="PROJECTS">
+      </a>
+      <a href="#projects" data-hover="Projects">
         <FontAwesomeIcon icon={faProjectDiagram} color="#4d4d4e" />
-        </NavLink>
-        <NavLink exact="true" to="/contact" activeclassname="active" className="contact-link" data-hover="CONTACT">
+      </a>
+      <a href="#contact" data-hover="Contact">
         <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
-        </NavLink>
+      </a>
     </nav>
 
     <ul>
-        <li>
-            <a target="_blank" rel='noreferrer' href='https://www.linkedin.com/in/sathwikhegde/'>
-                <FontAwesomeIcon icon={faLinkedin} color="#4d4d4e"></FontAwesomeIcon>
-            </a>
-        </li>
-        <li>
-            <a target="_blank" rel='noreferrer' href='https://github.com/SathwikHegde'>
-                <FontAwesomeIcon icon={faGithub} color="#4d4d4e"></FontAwesomeIcon>
-            </a>
-        </li>
-        <li>
-            <a target="_blank" rel='noreferrer' href='https://www.hackerrank.com/profile/satwikhegde14'>
-                <FontAwesomeIcon icon={faHackerrank} color="#4d4d4e"></FontAwesomeIcon>
-            </a>
-        </li>
-        <li>
-            <a target="_blank" rel='noreferrer' href='https://www.kaggle.com/sathwikhegde15'>
-                <FontAwesomeIcon icon={faKaggle} color="#4d4d4e"></FontAwesomeIcon>
-            </a>
-        </li>
+      <li>
+        <a target="_blank" rel='noreferrer' href='https://www.linkedin.com/in/sathwikhegde/'>
+          <FontAwesomeIcon icon={faLinkedin} color="#4d4d4e" />
+        </a>
+      </li>
+      <li>
+        <a target="_blank" rel='noreferrer' href='https://github.com/SathwikHegde'>
+          <FontAwesomeIcon icon={faGithub} color="#4d4d4e" />
+        </a>
+      </li>
+      <li>
+        <a target="_blank" rel='noreferrer' href='https://www.hackerrank.com/profile/satwikhegde14'>
+          <FontAwesomeIcon icon={faHackerrank} color="#4d4d4e" />
+        </a>
+      </li>
+      <li>
+        <a target="_blank" rel='noreferrer' href='https://www.kaggle.com/sathwikhegde15'>
+          <FontAwesomeIcon icon={faKaggle} color="#4d4d4e" />
+        </a>
+      </li>
     </ul>
-    </div>
-    )
+  </div>
+)
 
 export default Sidebar

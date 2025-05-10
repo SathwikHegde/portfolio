@@ -1,7 +1,9 @@
 html {
-  font-size: 62.5%; /* 1rem = 10px for easy scaling */
+  font-size: 62.5%; 
   scroll-behavior: smooth;
 }
+
+
 
 body {
   margin: 0;
