@@ -4,53 +4,55 @@ import { faLinkedin, faGithub, faHackerrank, faKaggle } from '@fortawesome/free-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faHome, faUser, faTools, faProjectDiagram } from '@fortawesome/free-solid-svg-icons'
 
-const Sidebar = () => (
-  <div className='nav-bar'>
-    <a className='logo' href="#home">
-      <img src={LogoSH} alt="logo" />
-    </a>
+const Sidebar = () => {
+  return (
+    <div className="nav-bar">
+      <a className="logo" href="#home">
+        <img src={LogoSH} alt="logo" />
+      </a>
 
-    <nav>
-      <a href="#home" data-hover="Home">
-        <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
-      </a>
-      <a href="#about" data-hover="About">
-        <FontAwesomeIcon icon={faUser} color="#4d4d4e" />
-      </a>
-      <a href="#skills" data-hover="Skills">
-        <FontAwesomeIcon icon={faTools} color="#4d4d4e" />
-      </a>
-      <a href="#projects" data-hover="Projects">
-        <FontAwesomeIcon icon={faProjectDiagram} color="#4d4d4e" />
-      </a>
-      <a href="#contact" data-hover="Contact">
-        <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
-      </a>
-    </nav>
+      <nav>
+        <a href="#home" aria-label="Home" data-hover="Home">
+          <FontAwesomeIcon icon={faHome} />
+        </a>
+        <a href="#about" aria-label="About" data-hover="About">
+          <FontAwesomeIcon icon={faUser} />
+        </a>
+        <a href="#skills" aria-label="Skills" data-hover="Skills">
+          <FontAwesomeIcon icon={faTools} />
+        </a>
+        <a href="#projects" aria-label="Projects" data-hover="Projects">
+          <FontAwesomeIcon icon={faProjectDiagram} />
+        </a>
+        <a href="#contact" aria-label="Contact" data-hover="Contact">
+          <FontAwesomeIcon icon={faEnvelope} />
+        </a>
+      </nav>
 
-    <ul>
-      <li>
-        <a target="_blank" rel='noreferrer' href='https://www.linkedin.com/in/sathwikhegde/'>
-          <FontAwesomeIcon icon={faLinkedin} color="#4d4d4e" />
-        </a>
-      </li>
-      <li>
-        <a target="_blank" rel='noreferrer' href='https://github.com/SathwikHegde'>
-          <FontAwesomeIcon icon={faGithub} color="#4d4d4e" />
-        </a>
-      </li>
-      <li>
-        <a target="_blank" rel='noreferrer' href='https://www.hackerrank.com/profile/satwikhegde14'>
-          <FontAwesomeIcon icon={faHackerrank} color="#4d4d4e" />
-        </a>
-      </li>
-      <li>
-        <a target="_blank" rel='noreferrer' href='https://www.kaggle.com/sathwikhegde15'>
-          <FontAwesomeIcon icon={faKaggle} color="#4d4d4e" />
-        </a>
-      </li>
-    </ul>
-  </div>
-)
+      <ul className="social-links">
+        <li>
+          <a href="https://www.linkedin.com/in/sathwikhegde/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <FontAwesomeIcon icon={faLinkedin} />
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/SathwikHegde" target="_blank" rel="noreferrer" aria-label="GitHub">
+            <FontAwesomeIcon icon={faGithub} />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.hackerrank.com/profile/satwikhegde14" target="_blank" rel="noreferrer" aria-label="HackerRank">
+            <FontAwesomeIcon icon={faHackerrank} />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.kaggle.com/sathwikhegde15" target="_blank" rel="noreferrer" aria-label="Kaggle">
+            <FontAwesomeIcon icon={faKaggle} />
+          </a>
+        </li>
+      </ul>
+    </div>
+  )
+}
 
 export default Sidebar
