@@ -76,7 +76,7 @@ const Skills = () => {
       ],
     },
   ];
-  
+
   return (
     <div className="skills-wrapper">
       <h1>My Skills & Experience</h1>
@@ -84,7 +84,7 @@ const Skills = () => {
       <div className="skills-content">
 
         <div className="canvas-container">
-          <canvas width="800" height="700" id="myCanvas" ref={canvasRef}>
+          <canvas width="800" height="550" id="myCanvas" ref={canvasRef}>
             <p>Your browser does not support the canvas element.</p>
           </canvas>
 
@@ -106,21 +106,24 @@ const Skills = () => {
           </div>
         </div>
 
-        
         <div className="experience-section">
           <div className="timeline">
             {experiences.map((exp, index) => (
               <div className="timeline-item" key={index}>
                 <div className="timeline-content">
-                  <h3>{exp.role}</h3>
+                  <div className="tooltip-wrapper">
+                    <h3 className="tooltip-trigger">{exp.role}</h3>
+                    <div className="tooltip-content">{exp.description}</div>
+                  </div>
                   <p className="company">{exp.company}</p>
-                  <p className="description">{exp.description}</p>
+
                   <div className="tech-tags">
-                  {exp.technologies.map((tech, i) => (
-                    <span className="tech-pill" key={i}>{tech}</span>
-                  ))}
+                    {exp.technologies.map((tech, i) => (
+                      <span className="tech-pill" key={i}>{tech}</span>
+                    ))}
+                  </div>
                 </div>
-                </div>
+
                 <div className="timeline-circle">
                   <FaLaptopCode />
                   <span className="date">{exp.date}</span>
@@ -129,6 +132,7 @@ const Skills = () => {
             ))}
           </div>
         </div>
+
       </div>
     </div>
   );

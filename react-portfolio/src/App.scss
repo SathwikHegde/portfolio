@@ -30,14 +30,14 @@ html, body, #root, .App {
 /* Main content area */
 .main-content {
   flex: 1;
-  padding-left: 80px;
+  padding-left: 10px;
   scroll-behavior: smooth;
 }
 
 /* Section styling */
 .section {
   min-height: 100vh;
-  padding: 60px 20px;
+  padding: 30px 20px;
   box-sizing: border-box;
 }
 

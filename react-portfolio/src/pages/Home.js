@@ -8,14 +8,15 @@ const Home = () => {
   const driveFileUrl =
     "https://drive.google.com/file/d/1NFOfti-5O0N0jkScw2G7ugNoEceAqf4E/view?usp=sharing";
 
-  const handleResumeClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault(); // Prevent React Router from handling the click
-    window.open(driveFileUrl, '_blank'); // Open in a new tab
-  };
+const handleResumeClick = (event) => {
+  event.preventDefault();
+  window.open(driveFileUrl, '_blank');
+};
+
 
 
   useEffect(() => {
-    const resumeButton = document.getElementById('resume-button'); //changed to ID
+    const resumeButton = document.getElementById('resume-button'); 
     if (resumeButton) {
       resumeButton.addEventListener('click', (event) => {
         event.preventDefault();

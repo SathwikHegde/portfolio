@@ -1,8 +1,22 @@
 import './index.scss'
 import LogoSH from '../../assets/images/Logo-SH.png'
-import { faLinkedin, faGithub, faHackerrank, faKaggle } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope, faHome, faUser, faTools, faProjectDiagram } from '@fortawesome/free-solid-svg-icons'
+import {
+  faLinkedin,
+  faGithub,
+  faHackerrank,
+  faKaggle
+} from '@fortawesome/free-brands-svg-icons'
+import {
+  // faEnvelope,
+  faHome,
+  faUser,
+  faTools,
+  faProjectDiagram
+} from '@fortawesome/free-solid-svg-icons'
+
+
+import { SiLeetcode, SiTableau } from 'react-icons/si'
 
 const Sidebar = () => {
   return (
@@ -24,9 +38,9 @@ const Sidebar = () => {
         <a href="#projects" aria-label="Projects" data-hover="Projects">
           <FontAwesomeIcon icon={faProjectDiagram} />
         </a>
-        <a href="#contact" aria-label="Contact" data-hover="Contact">
+        {/* <a href="#contact" aria-label="Contact" data-hover="Contact">
           <FontAwesomeIcon icon={faEnvelope} />
-        </a>
+        </a> */}
       </nav>
 
       <ul className="social-links">
@@ -48,6 +62,16 @@ const Sidebar = () => {
         <li>
           <a href="https://www.kaggle.com/sathwikhegde15" target="_blank" rel="noreferrer" aria-label="Kaggle">
             <FontAwesomeIcon icon={faKaggle} />
+          </a>
+        </li>
+        <li>
+          <a href="https://leetcode.com/u/sathwikhegde/" target="_blank" rel="noreferrer" aria-label="LeetCode">
+            <SiLeetcode size={20} color="#4d4d4e" />
+          </a>
+        </li>
+        <li>
+          <a href="https://public.tableau.com/app/profile/sathwik.hegde7927/vizzes" target="_blank" rel="noreferrer" aria-label="Tableau">
+            <SiTableau size={20} color="#4d4d4e" />
           </a>
         </li>
       </ul>
