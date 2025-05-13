@@ -141,8 +141,8 @@
     background-color: #fffdf5;
     border: 1px solid #ccc;
     padding: 10px;
-    width: 300px;
-    font-size: 1.3rem;
+    width: 500px;
+    font-size: 1.7rem;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 10;
@@ -221,7 +221,6 @@
 .canvas-container {
   flex: 1 1 50%;
   max-width: 60%;
-  // padding: 50px 20px;
   position: relative;
 
   canvas {
@@ -231,6 +230,63 @@
     cursor: grab;
   }
 }
+
+.hover-hint {
+  font-size: 1.4rem;
+  color:  #fef9e7;
+  background: #555;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+  text-align: right;
+  align-items: flex-end;
+  animation: fadePop 0.5s ease-out;
+}
+
+@keyframes fadePop {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Tooltip on hover */
+.hover-trigger {
+  position: relative;
+  cursor: pointer;
+}
+
+.hover-description {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 50%;
+  // left: 105%;
+  // transform: translateY(-150%);
+  background-color: #fffdf5;
+  padding: 10px 14px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 300px;
+  z-index: 5;
+  font-size: 1.3rem;
+  color: #333;
+  pointer-events: none;
+  text-align: right;
+  white-space: normal;
+}
+
+.hover-trigger:hover .hover-description {
+  visibility: visible;
+  opacity: 1;
+}
+
 
 /* Responsive fallback */
 @media (max-width: 1200px) {
@@ -266,8 +322,8 @@
 
 @media (max-width: 768px) {
   .skills-content {
-    flex-direction: row; // Ensure horizontal layout
-    flex-wrap: wrap;     // Allow wrapping if necessary
+    flex-direction: row; 
+    flex-wrap: wrap;     
   }
 
   .experience-section,

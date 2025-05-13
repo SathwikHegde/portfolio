@@ -1,10 +1,12 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Skills.scss';
 import { FaLaptopCode } from 'react-icons/fa';
 
 const Skills = () => {
   const canvasRef = useRef(null);
   const listRef = useRef(null);
+  const skillsRef = useRef(null);
+  const [showHint, setShowHint] = useState(false);
 
   useEffect(() => {
     const loadScript = (src) => {
@@ -44,6 +46,21 @@ const Skills = () => {
     });
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShowHint(true);
+          setTimeout(() => setShowHint(false), 5000); // Hide after 5s
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (skillsRef.current) observer.observe(skillsRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   const experiences = [
     {
       role: "Business Intelligence Engineer",
@@ -52,7 +69,7 @@ const Skills = () => {
       description:
         "In the healthcare domain, I designed and implemented scalable ETL pipelines using AWS services to streamline claims data processing and analysis. I built optimized data models in Amazon Redshift and orchestrated workflows with AWS Step Functions, improving performance and reliability. I ensured HIPAA compliance and achieved 98% accuracy through rigorous data validation.",
       technologies: [
-        "AWS Kinesis", "AWS Glue", "AWS Lambda", "Redshift", "Step Functions", "HIPAA Compliance"
+        "AWS Kinesis", "AWS Glue", "AWS Lambda", "Redshift", "Step Functions"
       ],
     },
     {
@@ -62,7 +79,7 @@ const Skills = () => {
       description:
         "In the telecom domain at Charter Communications, I architected end-to-end data solutions and ETL pipelines using AWS and ETL tools to optimize HMNO operations, reduce fallouts, and streamline reporting. I developed real-time dashboards with Tableau and MicroStrategy, enabling senior management to gain actionable insights into CBRS, SIM usage, and RAN KPIs. Additionally, I applied machine learning for forecasting and used Datadog for proactive system monitoring and performance optimization.",
       technologies: [
-        "AWS", "Alteryx", "Tableau", "MicroStrategy", "Datadog", "ML Forecasting"
+        "AWS", "Alteryx", "Tableau", "Postgres", "Datadog", "ML Forecasting"
       ],
     },
     {
@@ -72,17 +89,17 @@ const Skills = () => {
       description:
         "At Capgemini, I led end-to-end data engineering and BI initiatives across HR analytics, wholesale, and manufacturing domains, delivering scalable ETL pipelines and data models using scripting and cloud technologies. I developed dashboards and predictive models, enhancing decision-making and operational efficiency. My work spanned data warehouse design, machine learning, RPA automation, and regulatory compliance, supporting global clients across diverse sectors.",
       technologies: [
-        "Azure", "AWS", "Python", "SQL", "Power BI", "SAP BO", "RPA", "Tableau"
+        "Azure", "AWS","Tableau", "Python", "SQL", "Power BI", "SAP BO"
       ],
     },
   ];
 
   return (
-    <div className="skills-wrapper">
+    <div className="skills-wrapper" ref={skillsRef}>
       <h1>My Skills & Experience</h1>
 
       <div className="skills-content">
-
+        {/* Tag Canvas Cloud */}
         <div className="canvas-container">
           <canvas width="800" height="550" id="myCanvas" ref={canvasRef}>
             <p>Your browser does not support the canvas element.</p>
@@ -106,24 +123,22 @@ const Skills = () => {
           </div>
         </div>
 
+        {/* Experience Timeline */}
         <div className="experience-section">
           <div className="timeline">
             {experiences.map((exp, index) => (
               <div className="timeline-item" key={index}>
                 <div className="timeline-content">
-                  <div className="tooltip-wrapper">
-                    <h3 className="tooltip-trigger">{exp.role}</h3>
-                    <div className="tooltip-content">{exp.description}</div>
-                  </div>
+                  <h3 className="hover-trigger">{exp.role}
+                    <span className="hover-description">{exp.description}</span>
+                  </h3>
                   <p className="company">{exp.company}</p>
-
                   <div className="tech-tags">
                     {exp.technologies.map((tech, i) => (
                       <span className="tech-pill" key={i}>{tech}</span>
                     ))}
                   </div>
                 </div>
-
                 <div className="timeline-circle">
                   <FaLaptopCode />
                   <span className="date">{exp.date}</span>
@@ -132,8 +147,13 @@ const Skills = () => {
             ))}
           </div>
         </div>
-
       </div>
+
+      {showHint && (
+        <div className="hover-hint">
+          💡 Tip: Hover over the role title to see more details!
+        </div>
+      )}
     </div>
   );
 };

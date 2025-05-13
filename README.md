@@ -1,14 +1,50 @@
-#Installing packages
-1) npm i @emailjs/browser
-2) npm i @fortawesome/free-brands-svg-icons
-3) npm i @fortawesome/free-solid-svg-icons
-4) npm i @fortawesome/react-fontawesome
-5) npm i animate.css
-6) npm i gsap-trial
-7) npm i loaders.css
-8) npm i react-leaflet
-9) npm i react-loaders
-10) npm i react-router-dom
-11) npm i sass
+# Personal Portfolio - Sathwik Hegde
 
-1) create file .prettierrc
+This is a **responsive single-page React portfolio website** showcasing my skills, projects, work experience, and contact details. Built using modern frontend technologies and inspired by clean developer portfolio layouts.
+
+[Live Demo](https://sathwikhegde.github.io/portfolio)
+
+---
+
+## Tech Stack
+
+- **React.js** + **SCSS**
+- **Framer Motion** for animations
+- **FontAwesome** for icons
+- **TagCanvas** for interactive skill cloud
+- **Responsive Layout** with Flexbox + Media Queries
+- **Deployed using GitHub Pages**
+
+---
+
+## Features
+
+✅ Fully responsive single-page scroll layout  
+✅ Sidebar with anchor navigation and social links  
+✅ Hover tooltips on skills timeline  
+✅ Animated tag cloud for technologies  
+✅ Project section with GitHub links  
+✅ Contact form with framer animations  
+✅ Clean SCSS structure per component
+
+---
+
+## Folder Structure
+
+```bash
+react-portfolio/
+├── public/
+│   └── resume.pdf
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   └── Sidebar/
+│   ├── pages/
+│   │   ├── Home.js
+│   │   ├── About.js
+│   │   ├── Skills.js
+│   │   ├── Projects.js
+│   │   └── Contact.js
+│   ├── App.js
+│   ├── App.scss
+│   └── index.js

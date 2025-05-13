@@ -3,7 +3,7 @@ import Home from './Home';
 import About from './About';
 import Skills from './Skills';
 import Projects from './Projects';
-import Contact from './Contact';
+// import Contact from './Contact';
 
 const MainPage = () => {
   return (
@@ -12,7 +12,7 @@ const MainPage = () => {
       <section id="about"><About /></section>
       <section id="skills"><Skills /></section>
       <section id="projects"><Projects /></section>
-      <section id="contact"><Contact /></section>
+      {/* <section id="contact"><Contact /></section> */}
     </div>
   );
 };

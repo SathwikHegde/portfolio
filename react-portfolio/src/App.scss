@@ -17,7 +17,6 @@ html, body, #root, .App {
   overflow-x: hidden;
 }
 
-/* Fixed Sidebar */
 .nav-bar {
   width: 80px;
   height: 100vh;
@@ -41,7 +40,7 @@ html, body, #root, .App {
   box-sizing: border-box;
 }
 
-/* Scrollbar customization (optional) */
+/* Scrollbar customization */
 ::-webkit-scrollbar {
   width: 8px;
 }
