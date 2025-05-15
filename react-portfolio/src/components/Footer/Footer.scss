@@ -1,0 +1,17 @@
+// src/components/Footer.scss
+
+.footer {
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 1.4rem;
+  color: #555;
+  background-color: #fffdf5;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 40px;
+  animation: fadeIn 0.6s ease-in;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+    padding: 15px 5px;
+  }
+}
